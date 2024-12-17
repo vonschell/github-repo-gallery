@@ -2,6 +2,7 @@
 //division where your profile information will appear
 const overview = document.querySelector(".overview");
 const username = "vonschell";
+const repoList = document.querySelector(".repo-list");
 
 const gitProfileInfo = async function() {
     const profileInfo = await fetch (`https://api.github.com/users/${username}`);
@@ -27,4 +28,9 @@ const displayProfileInfo = function (data) {
     </div>
   `;
   overview.append(div);
+};
+
+const gitRepos = async function () {
+    const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+    const repoData = await fetchRepos.json();  
 };
