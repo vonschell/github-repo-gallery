@@ -5,6 +5,8 @@ const username = "vonschell";
 const repoList = document.querySelector(".repo-list");
 const allReposElement = document.querySelector(".repos");
 const repoData = document.querySelector(".repo-data");
+const viewReposButton = document.querySelector(".view-repos");
+const filterInput = document.querySelector(".filter-repos");
 
 const gitProfileInfo = async function() {
     const profileInfo = await fetch (`https://api.github.com/users/${username}`);
